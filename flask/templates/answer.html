@@ -1,0 +1,15 @@
+{%- macro answer(content, user, variant, title=None) -%} 
+<div class="card mb-3" style="min-width: 45%; background-color:{{ variant }};">
+  <div class="card-header">
+    <img src="/webapp/users/{{user.id}}/avatar" alt="User Avatar" class="rounded-circle" />
+    {{ user.username }}    
+    </div>
+   <div class="card-body">
+     {% if title %}
+     <h4>{{ title }}</h4>
+     {% endif %}
+     <p class="card-text">{{ content }}</p>
+   </div> 
+</div>
+
+{%- endmacro -%}

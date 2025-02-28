@@ -1,0 +1,41 @@
+{% extends 'page.html' %} {% block content %}
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <br />
+    <h1 class="login-header justify-content-center">Login</h1>
+    <hr />
+    {% import 'flash.html' as flash %} {{ flash.render() }}
+    <form action="/webapp/auth/login" method="POST">
+      <div class="form-group">
+        {% if next %}
+        <input name="next" type="hidden" value="{{next}}" />
+        {% endif %}
+        <input
+          type="email"
+          name="email"
+          class="form-control input-lg md-3"
+          placeholder="Enter your email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          class="form-control input-lg md-3"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+      <input
+        type="submit"
+        value="Submit"
+        class="btn btn-secondary btn-lg btn-block"
+      />
+    </form>
+    <a class="signup-link" href="{{ url_for('auth.signup') }}"
+      >Need an account? sign up Here!</a
+    >
+    <div class="footer"></div>
+  </div>
+</div>
+{% endblock %}

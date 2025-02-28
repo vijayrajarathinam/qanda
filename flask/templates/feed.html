@@ -1,0 +1,15 @@
+{% extends 'page.html' %} 
+{% block content %}
+
+<div class="pb-5">
+    {% import 'quest_card.html' as quest %}
+    <ul>
+        {% for question in questions %}
+            {{ quest.question(question.id, question.title, question.description, question.created, question.user)}}
+        {%  endfor %}
+    </ul>
+</div>
+<br/>
+<br/>
+<br/>
+{% endblock %}

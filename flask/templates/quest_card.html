@@ -1,0 +1,15 @@
+
+{%- macro question(id, title, description, created, user) -%}
+<div class="card mx-auto mb-3" style="max-width: 75%;">
+    <div class="card-body" >
+        <h5 class="card-title"><img src="/webapp/users/{{ user.id}}/avatar" class="rounded-circle">
+        {{ title }}
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted"> Asked at: {{ created }} by <a href="#">{{user.username}}</a></h6>
+        <hr>
+        <p class="card-text">{{ description }}</p>
+        <a href="{{ url_for('question.get_single_question', question_id=id) }}" class="card-link">View Questions</a>
+    </div>
+</div>
+{%- endmacro -%}
+
