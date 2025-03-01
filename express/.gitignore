@@ -1,0 +1,7 @@
+# created for server and client
+
+.env.*
+
+
+node_modules
+package-lock.json
